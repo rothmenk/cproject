@@ -1,3 +1,9 @@
 
 *.cache
 *.pdb
+bin/Debug/netcoreapp3.1/random.runtimeconfig.dev.json
+obj/project.assets.json
+obj/random.csproj.nuget.dgspec.json
+obj/random.csproj.nuget.g.props
+.vs/slnx.sqlite
+.vs/cproject/v16/.suo

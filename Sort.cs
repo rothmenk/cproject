@@ -45,14 +45,15 @@ namespace random
                 b = kaktus[kaktus.Length - 1];
                 kaktus[kaktus.Length - 1] = kaktus[index];
                 kaktus[index] = b;
-                // выписать список в консоль
-                for (int i = 0; i < kaktus.Length; i++)
+            // выписать список в консоль
+            /*    
+            for (int i = 0; i < kaktus.Length; i++)
                 {
                     Console.Write(kaktus[i] + " ");
                 }
+            */
 
-
-            }
+        }
             // метод для разделения на подсписки
             public static void QuickSort(int[] kaktus)
             {

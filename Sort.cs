@@ -52,7 +52,8 @@ namespace random
                     Console.Write(kaktus[i] + " ");
                 }
             */
-
+            
+            //TODO убрать 240 (найти 771)
         }
             // метод для разделения на подсписки
             public static void QuickSort(int[] kaktus)
@@ -82,6 +83,11 @@ namespace random
                     Console.Write(kaktus[i] + " ");
                 }
             }
+
+            public static void part(int start, int end)
+        {
+            return; //TODO разбить список на два учатка (до pivot и после)
+        }
             public static void Main(string[] args)
             {
                 int[] kaktus = { 800, 11, 50, 771, 649, 770, 240, 9 };

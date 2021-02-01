@@ -10,3 +10,8 @@ obj/random.csproj.nuget.g.props
 bin/Debug/netcoreapp3.1/random.dll
 *.dll
 bin/Debug/netcoreapp3.1/random.pdb
+obj/project.assets.json
+.vs/random/xs/UserPrefs.xml
+obj/project.nuget.cache
+obj/random.csproj.nuget.dgspec.json
+obj/random.csproj.nuget.g.props

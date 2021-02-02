@@ -69,7 +69,7 @@ namespace random
             temp = pivot;
             pivot = kaktus[b + 1];
             kaktus[b + 1] = temp;
-
+            kaktus[^1] = pivot;
             for (int i = 0; i < kaktus.Length; i++)
             {
                 Console.Write(kaktus[i] + " ");

@@ -15,3 +15,6 @@ obj/project.assets.json
 obj/project.nuget.cache
 obj/random.csproj.nuget.dgspec.json
 obj/random.csproj.nuget.g.props
+obj/Release/netcoreapp3.1/random.assets.cache
+obj/Debug/netcoreapp3.1/random.csprojAssemblyReference.cache
+.vs/slnx.sqlite

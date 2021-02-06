@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/contentModel.xml
+/.idea.random.iml
+/modules.xml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Users\rothm\source\repos\random\.idea\.idea.random\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

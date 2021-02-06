@@ -27,31 +27,30 @@ namespace random
                     kaktus[^1] = kaktus[c];
                     kaktus[c] = b;
                     break;
-                    }
-                    else
+                }
+                else
+                {
+                    if (min > Math.Abs(kaktus[c] - temp))
                     {
-                        if (min > Math.Abs(kaktus[c] - temp))
-                        {
-                            min = Math.Abs(kaktus[c] - temp);
-                            act = kaktus[c];
-                            index = c;
+                        min = Math.Abs(kaktus[c] - temp);
+                        act = kaktus[c];
+                        index = c;
 
-                        }
                     }
                 }
+            }
 
             //ставим 'min' в конец списке
             b = kaktus[^1];
             kaktus[^1] = kaktus[index];  //kaktus[kaktus.Length - 1] = kaktus[index];
             kaktus[index] = b;
         }
-
         // метод для разделения на подсписки
         public static void QuickSort(int[] kaktus)
         {
             int b = -1;
             int temp = 0;
-            int pivot = kaktus[kaktus.Length - 1];
+            var pivot = kaktus[^1];  
 
             for (int a = 1; a <= kaktus.Length - 2; a++)
             {

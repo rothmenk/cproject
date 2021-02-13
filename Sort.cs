@@ -6,34 +6,34 @@ namespace random
 {
     class Sort
     {
-        public static void Eq(int[] kaktus)
+        public static void Eq(int[] listOfElements)
         {
             int act = 0, min = 10000, b, index = 0;
             int temp = 0;
 
-            for (int a = 0; a < kaktus.Length; a++)
+            for (int a = 0; a < listOfElements.Length; a++)
             {
-                temp += kaktus[a];
+                temp += listOfElements[a];
             }
-            temp /= kaktus.Length;
+            temp /= listOfElements.Length;
 
             //среднее значение в списке
-            for (int c = 0; c < kaktus.Length; c++)
+            for (int c = 0; c < listOfElements.Length; c++)
             {
-                if (kaktus[c] == temp)
+                if (listOfElements[c] == temp)
                 {
                     //ставим в конец списка
-                    b = kaktus[kaktus.Length - 1];
-                    kaktus[^1] = kaktus[c];
-                    kaktus[c] = b;
+                    b = listOfElements[^1];
+                    listOfElements[^1] = listOfElements[c];
+                    listOfElements[c] = b;
                     break;
                 }
                 else
                 {
-                    if (min > Math.Abs(kaktus[c] - temp))
+                    if (min > Math.Abs(listOfElements[c] - temp))
                     {
-                        min = Math.Abs(kaktus[c] - temp);
-                        act = kaktus[c];
+                        min = Math.Abs(listOfElements[c] - temp);
+                        act = listOfElements[c];
                         index = c;
 
                     }
@@ -41,50 +41,78 @@ namespace random
             }
 
             //ставим 'min' в конец списке
-            b = kaktus[^1];
-            kaktus[^1] = kaktus[index];  //kaktus[kaktus.Length - 1] = kaktus[index];
-            kaktus[index] = b;
+            b = listOfElements[^1];
+            listOfElements[^1] = listOfElements[index];  //kaktus[kaktus.Length - 1] = kaktus[index];
+            listOfElements[index] = b;
         }
         // метод для разделения на подсписки
-        public static void QuickSort(int[] kaktus)
+        public static void QuickSort(int[] listOfElements)
         {
             int b = -1;
             int temp = 0;
-            var pivot = kaktus[^1];  
+            var pivot = listOfElements[^1];  
 
-            for (int a = 1; a <= kaktus.Length - 2; a++)
+            for (int a = 1; a <= listOfElements.Length - 2; a++)
             {
-                if (kaktus[a] < pivot)
+                if (listOfElements[a] < pivot)
                 {
                     b++;
-                    if (kaktus[b] > kaktus[a])
+                    if (listOfElements[b] > listOfElements[a])
                     {
-                        temp = kaktus[b];
-                        kaktus[b] = kaktus[a];
-                        kaktus[a] = temp;
+                        temp = listOfElements[b];
+                        listOfElements[b] = listOfElements[a];
+                        listOfElements[a] = temp;
                     }
                 }
             }
             temp = pivot;
-            pivot = kaktus[b + 1];
-            kaktus[b + 1] = temp;
-            kaktus[^1] = pivot;
-            for (int i = 0; i < kaktus.Length; i++)
+            pivot = listOfElements[b + 1];
+            listOfElements[b + 1] = temp;
+            listOfElements[^1] = pivot;
+            for (int i = 0; i < listOfElements.Length; i++)
             {
-                Console.Write(kaktus[i] + " ");
+                Console.Write(listOfElements[i] + " ");
             }
         }
 
-        public static void part(int start, int end)
+        public static void Partition(int[] listOfElements, int start, int end)
         {
-            return; //TODO разбить список на два учатка (до pivot и после)
+            var pivot = start -1;
+            int i = start;
+            int j = end;
+
+            while(i <= j)
+            {
+                while (listOfElements[i] < pivot)
+                {
+                    i++;
+                }
+
+                while (listOfElements[j] > pivot)
+                {
+                    j--;
+                }
+
+                if (i <= j)
+                {
+                    int temp = listOfElements[i];
+                    listOfElements[i] = listOfElements[j];
+                    listOfElements[j] = temp;
+                    i++;
+                    j++;
+                }
+            }
+
+            pivot++;
+            //Swap();
+            return ; 
         }
 
         public static void Main(string[] args)
         {
-            int[] kaktus = { 800, 11, 50, 771, 649, 770, 240, 9 };
-            Eq(kaktus);
-            QuickSort(kaktus);
+            int[] listOfElements = { 800, 11, 50, 771, 649, 770, 240, 9 };
+            Eq(listOfElements);
+            QuickSort(listOfElements);
             Console.ReadKey();
         }
     }

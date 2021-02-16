@@ -75,37 +75,23 @@ namespace random
             }
         }
 
-        public static void Partition(int[] listOfElements, int start, int end)
+        public static void partition(listOfElements[], start, end)
         {
-            var pivot = start -1;
-            int i = start;
-            int j = end;
+            
+            pivot = listOfElements[end];
 
-            while(i <= j)
+            i = (start - 1);  
+
+            for (j = start; j <= end - 1; j++)
             {
-                while (listOfElements[i] < pivot)
+                if (listOfElements[j] < pivot)
                 {
-                    i++;
-                }
-
-                while (listOfElements[j] > pivot)
-                {
-                    j--;
-                }
-
-                if (i <= j)
-                {
-                    int temp = listOfElements[i];
-                    listOfElements[i] = listOfElements[j];
-                    listOfElements[j] = temp;
-                    i++;
-                    j++;
+                    i++;    
+                    swap arr[i] and arr[j];
                 }
             }
-
-            pivot++;
-            //Swap();
-            return ; 
+            swap listOfElements[i + 1] and arr[end]);
+            return (i + 1);
         }
 
         public static void Main(string[] args)

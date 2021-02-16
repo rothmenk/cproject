@@ -6,5 +6,7 @@ namespace random
 {
     class Notebook
     {
+        
+
     }
 }
